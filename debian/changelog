@@ -1,5 +1,172 @@
-template-repository (1.0-1) unstable; urgency=medium
+gh (2.27.0+dfsg1-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 2.27.0+dfsg1
+  * Bump versioned dependencies as per go.mod
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Mon, 03 Jul 2023 11:57:20 -0600
+
+gh (2.24.3+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.24.3+dfsg1
+  * Update versioned dependencies as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Mon, 03 Jul 2023 11:20:00 -0600
+
+gh (2.23.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.23.0+dfsg1
+  * Bump build-dependencies according to go.mod:
+    - golang-github-cli-oauth-dev (>= 1.0.1)
+    - golang-github-joho-godotenv-dev (>= 1.5.1)
+  * Replace github.com/henvic/httpretty with github.com/mislav/httpretty
+    temporarily, as per go.mod, to "Avoid mangling response bodies of unknown
+    length"; see https://github.com/henvic/httpretty/pull/17
+
+ -- Anthony Fok <foka@debian.org>  Mon, 27 Feb 2023 12:41:45 -0700
+
+gh (2.22.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.22.1+dfsg1
+
+ -- Anthony Fok <foka@debian.org>  Wed, 01 Feb 2023 11:47:51 -0700
+
+gh (2.22.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.22.0+dfsg1
+  * Update versioned dependencies as per go.mod
+  * Bump Standards-Version to 4.6.2 (no change)
+  * Set GITHUB_ACTIONS to true to skip flaky tests;
+    see https://github.com/cli/cli/discussions/6858
+
+ -- Anthony Fok <foka@debian.org>  Thu, 26 Jan 2023 04:21:58 -0700
+
+gh (2.18.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.18.1+dfsg1
+  * Update versioned dependencies as per go.mod (as much as possible)
+  * Add temporary local copy of google.golang.org/grpc v1.49.0
+    and dependent github.com/golang/protobuf v1.5.2
+
+ -- Anthony Fok <foka@debian.org>  Sat, 22 Oct 2022 06:57:00 -0600
+
+gh (2.17.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.17.0+dfsg1
+  * Build-depend explicitly on golang-any (>= 2:1.18~) as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Tue, 04 Oct 2022 17:33:02 -0600
+
+gh (2.16.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.16.1+dfsg1
+  * Update versioned dependencies as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Wed, 28 Sep 2022 07:49:05 -0600
+
+gh (2.15.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.15.0+dfsg1
+  * Bump dependency: golang-github-shurcool-githubv4-dev
+    (>= 0.0~git20220115.a14260e)
+  * Remove 0002-Bump-github.com-spf13-cobra-from-v1.4.0-to-v1.5.0.patch
+    which has been applied upstream
+  * debian/rules: Fix "gh version" changelogURL
+    by removing +dfsg1 from build.Version in LDFLAGS
+
+ -- Anthony Fok <foka@debian.org>  Tue, 06 Sep 2022 19:37:43 -0600
+
+gh (2.14.7+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.14.7+dfsg1
+  * Update versioned dependencies as per go.mod
+  * Refresh 0001-set-defaultEditor-as-per-debian-policy.patch
+  * Apply 0002-Bump-github.com-spf13-cobra-from-v1.4.0-to-v1.5.0.patch:
+    Cobra v1.5.0 contains a fix for the zsh autocompletion #compdef line
+    to only complete <command>, not _<command> the completion function itself,
+    See https://github.com/cli/cli/pull/6196.  TestNewCmdCompletion for zsh,
+    which checks that #compdef line, is updated accordingly.
+    Fixes "FTBFS: FAIL: TestNewCmdCompletion/zsh_completion"
+    with golang-github-spf13-cobra-dev (>= 1.5.0).
+    Thanks to Shengjing Zhu for reporting the issue. (Closes: #1019137)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 05 Sep 2022 03:25:09 -0600
+
+gh (2.14.4+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.14.4+dfsg1'
+  * Update versioned dependency on golang-github-cli-go-gh-dev as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Thu, 11 Aug 2022 19:05:26 -0600
+
+gh (2.14.2+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.14.2+dfsg1
+  * Update versioned dependencies as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Mon, 18 Jul 2022 20:05:31 -0600
+
+gh (2.12.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.12.1+dfsg1
+  * Update versioned dependencies as per go.mod
+  * Bump Standards-Version to 4.6.1 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Fri, 17 Jun 2022 06:58:09 -0600
+
+gh (2.11.3+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 2.11.3+dfsg1
+  * Bump versioned dependencies as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Sun, 05 Jun 2022 07:57:15 -0600
+
+gh (2.4.0+dfsg1-4) unstable; urgency=medium
+
+  * Revert "Add diversion for /usr/bin/gh to allow concurrent install
+    with gitsome", and restore the versioned Conflicts with gitsome.
+    Thanks to Antoine Beaupré for talking some sense into me especially
+    this case is not like moreutils and parallel. (Closes: #1011545)
+
+ -- Anthony Fok <foka@debian.org>  Wed, 01 Jun 2022 16:55:59 -0600
+
+gh (2.4.0+dfsg1-3) unstable; urgency=medium
+
+  * Limit "Conflicts: gitsome" to older (<< 0.8.0+ds-7.1) versions.
+    Thanks to Antoine Beaupre for the suggestion, and for resolving the
+    file conflict with gitsome (#1005858) so amicably! (Closes: #1011545)
+  * Change default editor from nano to /usr/bin/editor as per Debian Policy
+    §11.4. Thanks to Jakub Wilk for the bug report. (Closes: #1008761)
+  * Rename "Build-Using" field to "Static-Build-Using" in debian/control
+  * Add diversion for /usr/bin/gh to allow concurrent install with gitsome
+    and remove Conflicts with gitsome. This is inspired by the conflict
+    resolution between the moreutils and parallel packages where both
+    contain /usr/bin/parallel.  See discussions in #749355.
+
+ -- Anthony Fok <foka@debian.org>  Tue, 31 May 2022 01:58:33 -0600
+
+gh (2.4.0+dfsg1-2) unstable; urgency=medium
+
+  * Add "Conflicts: gitsome" which also provides /usr/bin/gh.
+    Thanks to Axel Beckert for the bug report. (Closes: #1005858)
+  * Source-only upload for migration to testing
+
+ -- Anthony Fok <foka@debian.org>  Wed, 23 Mar 2022 04:10:32 -0600
+
+gh (2.4.0+dfsg1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #951374)
+  * Remove script/signtool.exe from source tarball.
+    SignTool from Windows SDK is not open-source software, see
+    https://docs.microsoft.com/en-us/windows/win32/seccrypto/signtool
+    Thanks to Thorsten Alteholz for the advice regarding signtool.exe
+  * Adjust debian/watch to add +dfsg1 suffix,
+    to skip upstream's v9.9.9-test and pre-releases,
+    and to fetch all past tags from api.github.com
+
+ -- Anthony Fok <foka@debian.org>  Tue, 15 Feb 2022 00:56:31 -0700
+
+gh (2.4.0-1) UNRELEASED; urgency=medium
+
+  * Initial pre-release
+
+ -- Anthony Fok <foka@debian.org>  Mon, 03 Jan 2022 13:07:01 -0700
